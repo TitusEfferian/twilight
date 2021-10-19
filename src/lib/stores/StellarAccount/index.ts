@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 import type { StellarAccountInterface } from './types';
 
 const StellarAccount = writable<StellarAccountInterface>({
-    balances: []
+	balances: []
 });
 
 export default StellarAccount;

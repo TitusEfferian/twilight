@@ -64,7 +64,11 @@ import { onMount } from 'svelte';
         <a href="/" class="text-green-500 text-sm mt-4 underline">Pelajari lebih lanjut</a>
     </div>
     <div class="max-w-xl mx-auto fixed bottom-0 inset-x-0 px-4 mb-8 flex items-center">
-        <button class="w-full border border-gray-300 rounded-xl shadow p-2 mr-2">Login</button>
+        <button class="w-full border border-gray-300 rounded-xl shadow p-2 mr-2">
+            <a href="/login" class="w-full">
+                login
+            </a>
+        </button>
         <button class="w-full border border-green-500 bg-green-500 rounded-xl text-white shadow p-2">Buat Wallet Baru</button>
     </div>
 </main>
