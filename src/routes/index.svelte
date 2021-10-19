@@ -42,6 +42,9 @@ import { onMount } from 'svelte';
 		>
 	</main>
 </div> -->
+<svelte:head>
+    <title>Twilight Wallet | Cryptocurrency Wallet Indonesia</title>
+</svelte:head>
 
 <main class="w-full h-screen bg-gray-100 flex items-center justify-center flex-col px-4">
     <h1 class="text-center font-bold">Twilight adalah non kustodia wallet pertama di indonesia.</h1>
