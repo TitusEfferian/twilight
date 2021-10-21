@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let onBack: () => void;
+	export let title: string;
 </script>
 
 <header class="fixed w-full top-0 inset-x-0 flex items-center p-4 shadow bg-white ">
@@ -15,5 +16,5 @@
 			/></svg
 		>
 	</button>
-	<p class="ml-4">Login</p>
+	<p class="ml-4">{title}</p>
 </header>

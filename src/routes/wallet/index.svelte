@@ -5,6 +5,7 @@
 	import Header from './HeaderWallet.svelte';
 	import StellarAccount from '$lib/stores/StellarAccount';
 	import TransactionList from './TransactionList.svelte';
+	import type { StellarLocalStorage } from '$lib/types';
 	export const prerender = true;
 	const handleFetchStellarAccount = async (address: string) => {
 		const data = await fetch(`${SINGLE_ACCOUNT}/${address}`);
@@ -17,11 +18,18 @@
 		});
 	};
 	onMount(async () => {
-		const data = localStorage.getItem('stellar_public_address');
-		if (!data) {
-			window.location.href = '/';
+		const isLoggedIn = localStorage.getItem('is_logged_in');
+		if (isLoggedIn === 'true') {
+			const { public_address }: StellarLocalStorage | null = JSON.parse(
+				localStorage.getItem('stellar')
+			);
+			if (!public_address) {
+				window.location.href = '/';
+			} else {
+				await handleFetchStellarAccount(public_address);
+			}
 		} else {
-			await handleFetchStellarAccount(data);
+			window.location.href = '/';
 		}
 	});
 </script>

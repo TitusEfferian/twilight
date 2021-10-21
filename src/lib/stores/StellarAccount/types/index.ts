@@ -4,6 +4,7 @@ interface StellarAccountBalances {
 
 interface StellarAccountInterface {
 	balances: StellarAccountBalances[];
+	id: string;
 }
 
 export type { StellarAccountBalances, StellarAccountInterface };
