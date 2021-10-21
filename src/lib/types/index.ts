@@ -10,4 +10,12 @@ interface StellarLocalStorage {
 	public_address: string;
 }
 
-export type { StellarBadRequest, StellarLocalStorage };
+interface StellarTransactionsInterface {
+	_embedded: {
+		records: {
+			memo: string;
+		}[];
+	};
+}
+
+export type { StellarBadRequest, StellarLocalStorage, StellarTransactionsInterface };

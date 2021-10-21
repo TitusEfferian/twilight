@@ -1,9 +1,9 @@
 <script>
 	import TwilightLogo from '$lib/components/TwilightLogo.svelte';
 	import { onMount } from 'svelte';
-	onMount(()=>{
+	onMount(() => {
 		const isLoggedIn = localStorage.getItem('is_logged_in');
-		if(isLoggedIn === 'true') {
+		if (isLoggedIn === 'true') {
 			window.location.href = '/wallet';
 		}
 	});

@@ -10,7 +10,7 @@
 
 <header class="w-full h-52 bg-green-500 flex items-center justify-center">
 	{#if balances.length === 0}
-		<h1 class="font-bold text-3xl text-white">loading</h1>
+		<div class="w-48 h-6 bg-green-200 animate-pulse" />
 	{/if}
 	{#if balances.length > 0}
 		<h1 class="font-bold text-3xl text-white">{balances[0].balance}XLM</h1>
