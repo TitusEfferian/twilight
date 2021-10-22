@@ -8,6 +8,7 @@
 	import TransactionList from './TransactionList.svelte';
 	import type { StellarLocalStorage, StellarTransactionsInterface } from '$lib/types';
 	export const prerender = true;
+	// let StellarSdk:any = null;
 	const handleFetchStellarAccount = async (address: string) => {
 		const data = await fetch(`${SINGLE_ACCOUNT}/${address}`);
 		const { balances } = await data.json();
@@ -42,7 +43,15 @@
 			window.location.href = '/';
 		}
 	});
+
+	// const handleFetchStellar = () => {
+	// 	StellarSdk = window.StellarSdk;
+	// }
 </script>
+<!-- 
+<svelte:head>
+	<script on:load="{handleFetchStellar}" src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/9.0.1/stellar-sdk.min.js" integrity="sha512-8a3mE7Q5q+2pkE6fCsSo9xehT+QcaGe8L/VNgr+YAISwTa5kO22SHXnUSj12RanLrUazxxWJaX4wr9eXCmRhuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</svelte:head> -->
 
 <div class="w-full h-screen bg-gray-100">
 	<Header />
