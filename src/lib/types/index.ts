@@ -18,4 +18,22 @@ interface StellarTransactionsInterface {
 	};
 }
 
-export type { StellarBadRequest, StellarLocalStorage, StellarTransactionsInterface };
+interface StellarPaymentsInterface {
+	_embedded: {
+		records: {
+			type: 'create_account' | 'payment';
+			starting_balance?: string;
+			amount?: string;
+			from?: string;
+			to?: string;
+			funder?: string;
+		}[];
+	};
+}
+
+export type {
+	StellarBadRequest,
+	StellarLocalStorage,
+	StellarTransactionsInterface,
+	StellarPaymentsInterface
+};
